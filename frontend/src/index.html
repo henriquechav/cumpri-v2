@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" 
+        rel="stylesheet"
+    >
+    <link href="./css/output.css" rel="stylesheet">
+    <title>Cumpri</title>
+</head>
+<body class="font-display">
+    <div id="root"> 
+        <header class="sticky shadow-sm">
+            <div class="flex justify-center items-center">
+                <h1 class="p-4 text-xl font-normal">Cumpri</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke-width="0.5" 
+                    stroke="currentColor" 
+                    class="size-8 fixed right-4"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+            </div>
+            <nav class="flex overflow-x-scroll navbar">
+                <h2 class="p-2 selected-tab">Tarefas</h2>
+                <h2 class="p-2">Outras</h2>
+                <h2 class="p-2">Outras</h2>
+                <div class="p-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke-width="1.0" 
+                        stroke="currentColor" 
+                        class="size-4 pr-1"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>                      
+                    <h2 class="text-nowrap">Nova aba</h2>
+                </div>
+            </nav>
+        </header>
+        <!-- <div id="app-panel" class="app-panel">
+
+            <aside id="sidebar" class="sidebar">
+                
+                <button id="create-group-button" class="button header__button invisible">
+                    <span class="material-symbols-outlined button-icon">add</span>
+                    Criar tarefas
+                </button>
+
+                <button id="create-frame-button" class="button invisible">
+                    <span class="material-symbols-outlined button-icon">add</span>
+                    Criar quadro
+                </button>
+
+                <ul class="sidebar__frame-list">
+                    
+                    <li class="button sidebar__frame-list-item">
+                        <span class="material-symbols-outlined button-icon">edit</span>
+                        Tarefas
+                    </li> 
+                   
+                </ul>
+
+                <dialog id="edit-frame-modal" class="app-modal sidebar__edit-modal">
+                    <p class="modal-title">Editar quadro</p>
+                    <input id="edit-frame-input" class="modal-input" type="text"/>
+                    <div class="modal-buttons">
+                        <button id="edit-frame-delete" class="modal-cancel">Deletar</button>
+                        <button id="edit-frame-submit" class="modal-submit">Editar</button>
+                    </div>
+                </dialog>
+
+                <dialog id="create-group-modal" class="app-modal">
+                    <p class="modal-title">Criar lista de tarefas</p>
+                    <input id="create-group-input" class="modal-input" type="text" placeholder="Título"/>
+                    <div class="modal-input-list" id="create-group-input-list">
+                        <div class="modal-input-wrapper">
+                            <input class="modal-input modal-input--task" type="text" placeholder="tarefa"/>
+                            <span class="material-symbols-outlined drag-task-icon unselectable">drag_indicator</span>
+                        </div>
+                    </div>
+                    <div class="modal-group-buttons">
+                        <span class="material-symbols-outlined task-add-icon unselectable">add</span>
+                        <span class="material-symbols-outlined task-remove-icon unselectable">remove</span>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="create-group-cancel" class="modal-cancel">Cancelar</button>
+                        <button id="create-group-submit" class="modal-submit">Concluir</button>
+                    </div>
+                </dialog>
+            </aside>
+      
+            <main class="main">
+                <div class="main__column">
+                    
+                    <div class="main__task-wrapper">
+                        <div class="task-wrapper__progress-bar">
+                            <div class="task-wrapper__progress-bar-fill"></div>
+                            <span class="task-wrapper__progress-bar-percentage">0%</span>
+                        </div>
+                        <h3 class="task-wrapper__title">Tarefas do Dia</h3>
+                        <ul class="task-wrapper__list">
+                            <li class="task-wrapper__task">
+                                <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                Tarefa 1
+                            </li>
+                        </ul>
+                    </div> 
+                   
+                </div>
+                <div class="main__column"></div>
+                <div class="main__column"></div>
+
+                <dialog id="edit-group-modal" class="app-modal">
+                    <p class="modal-title">Editar lista de tarefas</p>
+                    <input id="edit-group-input" class="modal-input" type="text" placeholder="Título"/>
+                    <div class="modal-input-list" id="edit-group-input-list">
+                        
+                        <div class="modal-input-wrapper">
+                            <input class="modal-input modal-input--task" type="text" placeholder="tarefa"/>
+                            <span class="material-symbols-outlined drag-task-icon unselectable">drag_indicator</span>
+                        </div>
+                       
+                    </div>
+                    <div class="modal-group-buttons">
+                        <span class="material-symbols-outlined task-add-icon unselectable">add</span>
+                        <span class="material-symbols-outlined task-remove-icon unselectable">remove</span>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="edit-group-cancel" class="modal-cancel">Deletar</button>
+                        <button id="edit-group-submit" class="modal-submit">Editar</button>
+                    </div>
+                </dialog>    
+            </main>
+
+        </div>
+    </div> -->
+    
+    <dialog open class="absolute inset-0 border-2">
+        <h3>Criar nova aba</h3>
+        <input type="text"/>
+        <div>
+            <button>Cancelar</button>
+            <button>Concluir</button>
+        </div>
+    </dialog>
+</body>
+</html>
