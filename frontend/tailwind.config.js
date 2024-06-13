@@ -5,6 +5,11 @@ module.exports = {
     fontFamily: {
       display: ["Nunito", "sans-serif"],
     },
+    extend: {
+      colors: {
+        "primary": "#548c2f",
+      },
+    },
   },
   plugins: [],
 }

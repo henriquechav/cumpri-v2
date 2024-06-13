@@ -4,13 +4,13 @@
 
 @layer components {
     .modal {
-        @apply inset-0 backdrop:bg-transparent backdrop:backdrop-blur-sm border-2 rounded-md p-4;
+        @apply inset-0 backdrop:bg-transparent backdrop:backdrop-blur-sm ring-1 ring-gray-100 rounded-xl p-4;
     }
     .modal h3 {
         @apply font-semibold py-1;
     }
     .modal .tab-input {
-        @apply border border-green-600 focus:outline-none p-2 my-2 rounded;
+        @apply border border-primary focus:outline-none p-2 my-2 rounded;
     }
     .modal .task-input {
         @apply border text-sm w-full focus:outline-none p-2 my-2 rounded focus:border-stone-300;
@@ -19,7 +19,7 @@
 
 @layer utilities {
     .selected-tab {
-        @apply text-green-600 border-b border-green-600;
+        @apply text-primary border-b border-primary;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
